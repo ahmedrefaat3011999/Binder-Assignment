@@ -1,0 +1,46 @@
+.product-index {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-width: 1024px;
+  max-width: 1024px;
+  margin-bottom: 64px;
+}
+
+.product-container {
+  display: flex;
+  justify-content: center;
+
+}
+
+.green{
+  color: green;
+  background-color: #ddd;
+}
+.red{
+  color: red;
+  background-color: #eee;
+}
+.sorting{
+  text-align: center;
+  padding: 10px;
+  button{
+    margin-right: 7px;
+  }
+}
+
+.searching{
+  text-align: center;
+  margin-top: 10px;
+  input{
+    border: none;
+    outline: none;
+    padding: 5px 12px ;
+    outline:1px solid red;
+    border-radius: 10px;
+    &:focus{
+      outline:1px solid aqua;
+      border: none;
+    }
+  }
+}

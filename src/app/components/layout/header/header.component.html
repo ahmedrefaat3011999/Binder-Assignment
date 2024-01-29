@@ -1,0 +1,21 @@
+<header>
+  <nav>
+    <a class="logo" [routerLink]="['/courses']"><img src="assets/images/logo.PNG" width="50px" height="50px" style="border-radius: 50%;" alt=""></a>
+    <div class="links">
+      <ul>
+        <li><a [routerLink]="['/courses']" routerLinkActive="active" >Courses</a></li>
+        <li><a [routerLink]="['/cart']" routerLinkActive="active">Cart</a></li>
+        <li><a [routerLink]="['/wishlist']" routerLinkActive="active">Wishlist</a></li>
+      </ul>
+    </div>
+    <div class="user">
+      <span>{{user.fname}}</span>
+      <button class="btn"routerLink="profile">Profile</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Courses WebSite</h2>
+    <button [routerLink]="['/courses']" class="btn">Go to Courses</button>
+  </div>
+</header>

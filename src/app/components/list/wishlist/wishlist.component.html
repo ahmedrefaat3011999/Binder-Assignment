@@ -1,0 +1,39 @@
+
+<div class="empty-cart-message" *ngIf="!wish[0]">There is no Products in the cart GO and add some more</div>
+<app-bread-crumb [bread]="'Wishlist'"></app-bread-crumb>
+<br>
+<hr>
+<div class="cart-panel" *ngIf="wish[0]" >
+
+
+    <div class="cart-container" >
+
+
+        <div *ngFor="let cart of wish ; let i = index " class="cart-item">
+            <div class="image">
+                <img [src]="cart.item.imageURL" alt="">
+            </div>
+            <div class="cart-item-details">
+                <h2 class="name">{{cart.item.courseName}}</h2>
+                <div class="price"> <span>price:</span> {{cart.item.actualPrice }} ₹</div>
+                <div class="author"><span>Author:</span> {{cart.item.author }}</div>
+                <br>
+                <div class="actions">
+                  <div class="delete">
+                      <button class="btn" style="background-color:red;color:white" (click)="Delete(cart.item)">Remove</button>
+                  </div>
+                  <div class="add">
+                    <app-add-to-cart [courseDetails]="cart.item"></app-add-to-cart>
+                  </div>
+                </div>
+
+                <br>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+</div>

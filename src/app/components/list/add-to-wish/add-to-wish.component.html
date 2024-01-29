@@ -1,0 +1,7 @@
+<div *ngIf="detail">
+<div *ngIf="!courseDetails.isListed"  class="gray" id="wishlist" (click)="wishlist()"></div>
+<div *ngIf="courseDetails.isListed" class="red" id="wishlist" (click)="Delete(courseDetails)"></div>
+</div>
+
+<button  *ngIf="!detail" class="btn"  (click)="wishlist()"> Add to wishlist</button>
+<!-- {{this.courseDetails.isListed}} -->

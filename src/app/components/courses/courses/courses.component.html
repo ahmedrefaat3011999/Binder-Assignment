@@ -1,0 +1,30 @@
+<app-bread-crumb [bread]="'Courses'"></app-bread-crumb>
+<br>
+<hr>
+<div class="sorting">
+  <button  class="btn"  (click)="sortProductsAsc()">Sort Asc</button>
+  <button class="btn" (click)="sortProductsDesc()">Desc Desc</button>
+  <button class="btn" (click)="reset()"> reset</button>
+</div>
+<hr>
+<button class="btn" style="margin: 10px;" (click)="cname()">search by course name</button>
+
+<button class="btn" (click)="aname()">search by Author</button>
+<div class="searching">
+  <label *ngIf="courseName" for="filter">Filter By Name: </label>
+  <input *ngIf="courseName" id="filter" type="text" #filterValue (keyup)="filterBy(filterValue)">
+  <br> <br>
+  <label *ngIf="author" for="filter">Filter By Author: </label>
+  <input *ngIf="author" id="filter" type="text" #filterValue2 (keyup)="filterBy2(filterValue2)">
+</div>
+
+<br>
+
+<br>
+<div class="product-container">
+
+  <div class="product-index">
+          <app-course *ngFor="let course of sorted " [course] = "course"></app-course>
+      </div>
+  </div>
+

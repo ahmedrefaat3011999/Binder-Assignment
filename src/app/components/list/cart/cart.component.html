@@ -1,0 +1,41 @@
+
+<div class="empty-cart-message" *ngIf="!carts[0]">There is no Products in the cart GO and add some more</div>
+<app-bread-crumb [bread]="'Cart'"></app-bread-crumb>
+<br>
+<hr>
+<div class="cart-panel" *ngIf="carts[0]" >
+
+
+    <div class="cart-container" >
+
+
+        <div *ngFor="let cart of carts ; let i = index " class="cart-item">
+            <div class="image">
+                <img [src]="cart.item.imageURL" alt="">
+            </div>
+            <div class="cart-item-details">
+                <h2 class="name">{{cart.item.courseName}}</h2>
+                <div class="price"> <span>price:</span> ₹ {{cart.item.actualPrice}} </div>
+                <div class="price"> <span>discount:</span> ₹ {{ cart.item.discountPercentage }} %</div>
+                <div class="price"> <span>price after discount:</span> ₹ {{cart.item.actualPrice - ( cart.item.actualPrice * cart.item.discountPercentage)/100 }} </div>
+                <div class="author"><span>Author:</span> {{cart.item.author }}</div>
+                <br>
+
+                <div class="delete">
+                    <button class="btn" style="background-color:red;color:white" (click)="Delete(cart.item)">Delete</button>
+                </div>
+                <br>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="allTotal">
+            Total Price After discount :  ₹ {{sum }}
+        </div>
+    </div>
+
+
+</div>

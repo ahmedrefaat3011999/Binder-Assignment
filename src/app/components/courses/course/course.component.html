@@ -1,0 +1,23 @@
+<div class="product-container" >
+  <!-- Image -->
+  <div class="product-image"   >
+      <img  [routerLink]="[course.id]"[src]="course.imageURL"  alt="">
+      <div class="tags">
+        <span class="tag" *ngFor="let tag of course.tags"> {{tag}}</span>
+      </div>
+      <div class="wishlist">
+        <app-add-to-wish [courseDetails]="course"></app-add-to-wish>
+      </div>
+  </div>
+  <!-- Title -->
+  <h3>{{course.courseName}}</h3>
+  <!-- price -->
+  <span class="price">{{course.actualPrice }} ₹</span>
+  <!-- disscount -->
+  <span *ngIf="course.discountPercentage > 0 " class="discount">{{course.discountPercentage}}%</span>
+  <!-- Button -->
+  <app-add-to-cart [courseDetails]="course"></app-add-to-cart>
+
+  <!-- Author -->
+  <div class="author"> <span>Author :</span> {{course.author}}</div>
+</div>
